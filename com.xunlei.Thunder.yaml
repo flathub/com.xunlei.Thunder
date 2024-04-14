@@ -35,9 +35,9 @@ modules:
     sources:
       - type: extra-data
         filename: com.xunlei.download_amd64.deb
-        url: https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/com.xunlei.download/com.xunlei.download_1.0.0.2_amd64.deb
-        sha256: c848fbf3dc93ec04e6a22ced5dfde5392a0481490835b95ad99d6cbc6dea187a
-        size: 46280318
+        url: https://archive.kylinos.cn/kylin/partner/pool/com.xunlei.download_1.0.0.1_amd64.deb
+        sha256: 61044a87dbe14efcd3138c6b19fe29cd5b143838f60eeb6bc9aea2e939604726
+        size: 46226604
 
       - type: script
         commands:
