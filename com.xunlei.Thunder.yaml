@@ -1,9 +1,9 @@
 app-id: com.xunlei.Thunder
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '21.08'
+base-version: '25.08'
 separate-locales: false
 command: thunder.sh
 
