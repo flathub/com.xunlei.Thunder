@@ -9,8 +9,8 @@
   <project_license>LicenseRef-proprietary=https://i.xunlei.com/xluser/legal/agreement.html</project_license>
   <url type="homepage">https://www.xunlei.com/</url>
   <description>
+    <p>**NOTE: This wrapper is not verified by, affiliated with, or supported by Xunlei, Inc.**</p>
     <p>Xunlei download, which supports downloading HTTP, BitTorrent, Magnet, etc.</p>
-    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Xunlei, Inc.</p>
   </description>
   <screenshots>
     <screenshot type="default">
