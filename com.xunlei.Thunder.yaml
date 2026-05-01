@@ -28,10 +28,6 @@ modules:
       - install -Dm644 com.xunlei.Thunder.png /app/share/icons/hicolor/256x256/apps/com.xunlei.Thunder.png
       - install -Dm644 com.xunlei.Thunder.desktop /app/share/applications/com.xunlei.Thunder.desktop
       - install -Dm644 com.xunlei.Thunder.appdata.xml /app/share/metainfo/com.xunlei.Thunder.appdata.xml
-
-      - install -D -t /app/lib/ /usr/lib/x86_64-linux-gnu/libbfd-*.so
-      - install -D -t /app/bin/ /usr/bin/ar
-
     sources:
       - type: extra-data
         filename: com.xunlei.download_amd64.deb
@@ -41,10 +37,14 @@ modules:
 
       - type: script
         commands:
-          - ar x com.xunlei.download_amd64.deb
+          # 使用 runtime 自带的 bsdtar 解包 deb，避免依赖 SDK 中 ar/libbfd 的动态库路径。
+          - set -eu
+          - bsdtar -xf com.xunlei.download_amd64.deb data.tar.xz
           - tar -xf data.tar.xz
           - mv ./opt/apps/com.xunlei.download/files ./thunder
-          - rm -rf com.xunlei.download_amd64.deb sign debian-binary control.tar.gz data.tar.xz opt
+          # 明确校验启动文件，防止解包失败后仍然被 Flatpak 当成安装成功。
+          - test -x ./thunder/thunder
+          - rm -rf com.xunlei.download_amd64.deb sign debian-binary control.tar.* data.tar.* opt
         dest-filename: apply_extra
 
       - type: script
